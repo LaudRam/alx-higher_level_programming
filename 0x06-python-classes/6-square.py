@@ -24,10 +24,6 @@ class Square():
         self.__size = size
         self.__position = position
 
-    def __str__(self):
-        ''' String representation initialisor for square '''
-        self.my_print()
-
     def area(self):
         ''' Calculates area of square
 
