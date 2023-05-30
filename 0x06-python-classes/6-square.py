@@ -85,3 +85,7 @@ class Square():
 
         for j in range(self.__size):
             print('{}{}'.format(' ' * self.__position[0], '#' * self.__size))
+
+    def __str__(self):
+        ''' String representation initialisor for square '''
+        self.my_print()
