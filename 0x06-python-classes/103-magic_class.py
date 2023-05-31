@@ -6,7 +6,7 @@ import math
 
 
 class MagicClass():
-    ''' Defines class that does exactly the same as provided python bytecode '''
+    '''Defines class that does exactly the same as provided python bytecode'''
 
     def __init__(self, radius=0):
         ''' Initialises MagicClass
