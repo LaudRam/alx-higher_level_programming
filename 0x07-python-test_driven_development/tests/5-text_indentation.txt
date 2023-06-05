@@ -1,0 +1,53 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text='Testing for dot.Did it work? Testing for: ., ? and :'
+>>> text_indentation(text)
+Testing for dot.
+<BLANKLINE>
+Did it work?
+<BLANKLINE>
+Testing for:
+<BLANKLINE>
+.
+<BLANKLINE>
+, ?
+<BLANKLINE>
+and :
+<BLANKLINE>
+
+>>> text = 1989
+>>> text_indentation(text)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text = 'Laudy'
+>>> text_indentation(text)
+Laudy
+
+>>> text = 'Test.?: ing.?   ngl.'
+>>> text_indentation(text)
+Test.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+ing.
+<BLANKLINE>
+ngl.
+<BLANKLINE>
+
+>>> text_indentation('.Test')
+.
+<BLANKLINE>
+Test
+
+>>> text_indentation('')
+
+>>> text_indentation('  ')
+
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
