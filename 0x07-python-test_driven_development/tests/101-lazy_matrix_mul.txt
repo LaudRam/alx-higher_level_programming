@@ -1,0 +1,78 @@
+>>> lazy_matrix_mul  = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Check for first matrix not a list
+>>> m_a = "School"
+>>> m_b = [[1, 2, 3]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+
+Check for second matrix not a list
+>>> m_b = "School"
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+
+Check for empty matrix
+>>> m_a =[]
+>>> m_b = [[1, 2, 3], [4, 5, 6]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b =[]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+
+Check for non-numbers
+>>> m_a = [[1, 2, "lost"], [4, 5, 6]]
+>>> m_b = [[1, 2, 3], [4, 5, 6]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[1, 2, "lost"], [4, 5, 6]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b should contain only integers or floats
+
+Check for rows in the matrix not same size
+>>> m_a = [[1, 2, 3], [4, 5]]
+>>> m_b = [[1, 2, 3], [4, 5, 6]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_a must should be of the same size
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[1, 2, 3], [4, 5]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_b must should be of the same size
+
+>>> m_b = [[1, 2, 3], [4, 5, 6]]
+>>> m_a = [[1, 2, 3]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
