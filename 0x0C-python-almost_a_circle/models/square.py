@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-'''
-    Implementation of the square class
-'''
+''' Defines Square class '''
 from models.rectangle import Rectangle
 
 

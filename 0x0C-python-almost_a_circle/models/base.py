@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-'''
-    Creating the base class of all other classes for this project.
-'''
+''' Defines base model class'''
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -84,7 +83,7 @@ class Base:
         try:
             with open(file_name, encoding="UTF8") as fd:
                 content = cls.from_json_string(fd.read())
-        except:
+        except Exception:
             return []
 
         instances = []

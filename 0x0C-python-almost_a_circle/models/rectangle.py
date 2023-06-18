@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-'''
-    Class Rectangle
-'''
+''' Defines Rectangle class '''
 from models.base import Base
 
 

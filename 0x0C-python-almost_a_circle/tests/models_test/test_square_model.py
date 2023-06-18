@@ -1,15 +1,11 @@
 #!/usr/bin/python3
+''' Defines unittests for models/square.py '''
 import unittest
 from models.square import Square
 import os
 import sys
 import json
 from io import StringIO
-
-
-'''
-    Runs test cases for the square module
-'''
 
 
 class test_square(unittest.TestCase):
@@ -30,7 +26,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
         del self.s
 
@@ -289,7 +285,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
         r1 = Square(5, 0, 0, 346)
         Square.save_to_file([r1])
@@ -312,7 +308,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
         r1 = Square(5, 0, 0, 346)
         Square.save_to_file(None)
@@ -328,7 +324,7 @@ class test_square(unittest.TestCase):
         '''
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
         r1 = Square(5, 0, 0, 346)
         Square.save_to_file([r1])
@@ -339,33 +335,33 @@ class test_square(unittest.TestCase):
         self.assertEqual(str, type(content))
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
 
     def test_json_string_type(self):
-            '''
-                Testing the returned type
-            '''
-            list_input = [
-                {'id': 2089, 'size': 10},
-                {'id': 2712, 'size': 1}]
-            json_list_input = Square.to_json_string(list_input)
-            list_output = Square.from_json_string(json_list_input)
-            self.assertEqual(type(list_input), list)
+        '''
+            Testing the returned type
+        '''
+        list_input = [
+            {'id': 2089, 'size': 10},
+            {'id': 2712, 'size': 1}]
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        self.assertEqual(type(list_input), list)
 
     def test_json_string(self):
-            '''
-                Testing that the json string gets converted into a list
-            '''
-            list_input = [
-                {'id': 2089, 'size': 10},
-                {'id': 2712, 'size': 7}]
-            json_list_input = Square.to_json_string(list_input)
-            list_output = Square.from_json_string(json_list_input)
-            s1 = {'id': 2089, 'size': 10}
-            s2 = {'size': 7, 'id': 2712}
-            self.assertEqual(list_input[0], s1)
-            self.assertEqual(list_input[1], s2)
+        '''
+            Testing that the json string gets converted into a list
+        '''
+        list_input = [
+            {'id': 2089, 'size': 10},
+            {'id': 2712, 'size': 7}]
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+        s1 = {'id': 2089, 'size': 10}
+        s2 = {'size': 7, 'id': 2712}
+        self.assertEqual(list_input[0], s1)
+        self.assertEqual(list_input[1], s2)
 
     def test_dict_to_instance(self):
         '''

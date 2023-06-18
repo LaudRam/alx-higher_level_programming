@@ -1,12 +1,9 @@
 #!/usr/bin/python3
+''' Defines unittests for models/base.py '''
 import unittest
 from models.base import Base
 from models.square import Square
 import json
-
-'''
-    Creating test cases for the base module
-'''
 
 
 class test_base(unittest.TestCase):
