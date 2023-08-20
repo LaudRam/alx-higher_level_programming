@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+''' List all the states in the given database '''
+
 import sys
 import MySQLdb
 
 
 def get_states(username, password, db_name):
-    ''' List all the states in the given database '''
+    ''' Access database to get states'''
     db = MySQLdb.connect(host="localhost", user=username,
                          passwd=password, db=db_name, port=3306)
 
