@@ -5,7 +5,7 @@ import MySQLdb
 
 def get_states(username, password, db_name):
     ''' List all the states in the given database '''
-    db = MySQLdb.connect(host="localhost", user=username, 
+    db = MySQLdb.connect(host="localhost", user=username,
                          passwd=password, db=db_name, port=3306)
 
     cursor = db.cursor()
