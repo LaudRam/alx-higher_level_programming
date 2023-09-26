@@ -1,7 +1,7 @@
 #!/usr/bin/node
-let filePath = process.argv[2];
+const filePath = process.argv[2];
 
-let fs = require('fs');
+const fs = require('fs');
 
 fs.readFile(filePath, function (err, data) {
   if (err) {
